@@ -31,6 +31,5 @@ jobs:
           automatic_release_tag: latest
           prerelease: false
           title: Release ${{ steps.versioning.outputs.version }}
-          files: |
-            registry.json 
+          files: dist/registry.json
           id: automatic_release
