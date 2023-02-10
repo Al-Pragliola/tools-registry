@@ -3,7 +3,7 @@ name: Fetch registry data and update
 on:
   workflow_dispatch: {}
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: "30 5,17 * * *"
 
 jobs:
   fetch-update:
