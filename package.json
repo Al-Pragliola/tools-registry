@@ -1,0 +1,25 @@
+{
+  "name": "tools-registry",
+  "version": "0.0.1",
+  "description": "Tools registry",
+  "main": "index.mts",
+  "scripts": {
+    "fetch": "npx ts-node --esm index.mts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Al-Pragliola/tools-registry.git"
+  },
+  "author": "Alessio Pragliola",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/Al-Pragliola/tools-registry/issues"
+  },
+  "homepage": "https://github.com/Al-Pragliola/tools-registry#readme",
+  "devDependencies": {
+    "@types/node": "^18.13.0"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.0"
+  }
+}

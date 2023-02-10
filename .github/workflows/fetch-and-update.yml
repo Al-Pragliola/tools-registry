@@ -1,0 +1,40 @@
+name: Fetch registry data and update
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  fetch-update:
+    name: Fetch and update registry
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 19.x]
+    env:
+      GITHUB_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v3
+      - uses: msimerson/node-lts-versions@v1.1.1
+      - uses: actions/setup-node@v3
+        env:
+          FORCE_COLOR: 0
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run fetch
+      - name: Create Pull Request
+        id: cpr
+        uses: peter-evans/create-pull-request@v4
+        with:
+          token: ${{ github.token }}
+          commit-message: "chore: update registry"
+          committer: GitHub <noreply@github.com>
+          author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
+          branch: update-registry
+          delete-branch: true
+          title: 'Feat: Update registry'
+          body: |
+            Update registry with new versions
+
