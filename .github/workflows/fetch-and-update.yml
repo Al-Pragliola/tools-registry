@@ -1,6 +1,7 @@
 name: Fetch registry data and update
 
 on:
+  workflow_dispatch: {}
   schedule:
     - cron: "*/5 * * * *"
 
