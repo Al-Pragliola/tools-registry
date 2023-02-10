@@ -39,6 +39,6 @@ export async function fetchAll(): Promise<string[]> {
             reject(error);
         }
 
-        resolve(releases);
+        resolve(releases.reverse());
     });
 }
