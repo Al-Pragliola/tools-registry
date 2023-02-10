@@ -15,7 +15,7 @@ jobs:
       GITHUB_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@v3
-      - uses: msimerson/node-lts-versions@v1.1.1
+      - uses: msimerson/node-lts-versions@v1
       - uses: actions/setup-node@v3
         env:
           FORCE_COLOR: 0
