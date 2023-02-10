@@ -53,7 +53,7 @@ const writeRegistry = async (releases: Promise<Registry>): Promise<string> => {
     const registryDir = fs.mkdtempSync(path.join(os.tmpdir(), "registry-"), "utf-8");
     const registryPath = `${registryDir}/registry.json`;
 
-    fs.writeFileSync(registryPath, `${JSON.stringify(registry)}${os.EOL}`, "utf-8");
+    fs.writeFileSync(registryPath, `${JSON.stringify(registry, null, 2)}${os.EOL}`, "utf-8");
 
     console.log(`Registry written to ${registryPath}`);
 
