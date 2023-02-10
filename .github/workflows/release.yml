@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: git fetch --tags origin
       - name: Read Version Number
         id: versioning
         uses: paulhatch/semantic-version@v4.0.2
