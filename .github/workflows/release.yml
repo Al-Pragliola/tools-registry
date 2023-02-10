@@ -20,6 +20,7 @@ jobs:
           minor_pattern: "(MINOR)"
           format: "${major}.${minor}.${patch}"
           search_commit_body: false
+          change_path: "dist/registry.json,.github/workflows/*"
           user_format_type: "csv"
       - uses: rickstaa/action-create-tag@v1
         with:
