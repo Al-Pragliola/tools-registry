@@ -2,7 +2,7 @@ name: Fetch registry data and update
 
 on:
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/5 * * * *"
 
 jobs:
   fetch-update:
